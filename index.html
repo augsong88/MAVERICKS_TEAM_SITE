@@ -40,6 +40,26 @@
         h2 { border-bottom: 2px solid #003366; padding-bottom: 5px; color: #003366; }
 
 /* 특정 요소 스타일링 */
+
+        /* 인스타그램 버튼 스타일 (핑크색) */
+        /* 인스타그램 링크 버튼 스타일 */
+        .instagram-link {
+            display: inline-block;
+            background-color: #ff4b8b; /* 진한 핑크 */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .instagram-link:hover {
+            background-color: #ff6fa5; /* hover 시 연한 핑크 */
+        
+            
+        }
         /* 출석 체크인 버튼 스타일 (초록색) */
         .attendance-button { 
             background-color: #4CAF50; 
@@ -229,12 +249,19 @@
         <div id="dashboard" class="content-section">
             <h2>대시보드</h2>
             <p>환영합니다! 오늘의 주요 팀 활동 요약을 확인하세요.</p>
+          
+            <a href="https://www.instagram.com/kaist_mavericks/" 
+                target="_blank" 
+                class = "instagram-link">
+                Instagram 바로가기 (@kaist_mavericks)
+            </a>
+</a>
             <ul id="dashboard-schedule-list">
                 </ul>
         </div>
         <div id="attendance" class="content-section hidden">
             <h2>✅ 출석 관리</h2>
-            <p>오늘의 출석을 기록합니다. (선수용 화면 예시)</p>
+            <p>오늘의 출석을 기록합니다.</p>
             
             <a href="https://docs.google.com/spreadsheets/d/1h6O6I52Pz8g6QufEH3bcoZPt0tNVO9lr5dSqsC-qo70/edit?usp=drivesdk"
                 target="_blank"
@@ -264,7 +291,7 @@
 
         <div id="calendar" class="content-section hidden">
             <h2>📅 일정 관리</h2>
-            <p>팀 훈련 및 경기 캘린더를 확인하세요. (월별 뷰)</p>
+            <p>팀 훈련 및 경기 캘린더를 확인하세요.</p>
             
             <div id="calendar-header">
                 <button onclick="changeMonth(-1)">&#9664; 이전</button>
@@ -505,11 +532,11 @@
 
             // 대시보드 목록에 추가
             const trainingItem = document.createElement('li');
-            trainingItem.innerHTML = `**가장 가까운 훈련:** ${trainingText}`;
+            trainingItem.innerHTML = `가장 가까운 훈련: ${trainingText}`;
             list.appendChild(trainingItem);
             
             const gameItem = document.createElement('li');
-            gameItem.innerHTML = `**가장 가까운 경기:** ${gameText}`;
+            gameItem.innerHTML = `가장 가까운 경기: ${gameText}`;
             list.appendChild(gameItem);
         }
         // ----------------------------------------------------
